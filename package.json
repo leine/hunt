@@ -19,6 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
     "flow": "flow",
     "eslint": "eslint"
   },
@@ -46,6 +47,7 @@
     "eslint-plugin-ft-flow": "^3.0.11",
     "eslint-plugin-react": "^7.37.5",
     "flow-bin": "^0.279.0",
+    "gh-pages": "^6.3.0",
     "globals": "^16.3.0",
     "hermes-eslint": "^0.31.0"
   }
