@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.f855e6bc.css",
-    "main.js": "/static/js/main.3860d69c.js",
+    "main.css": "/static/css/main.2579aade.css",
+    "main.js": "/static/js/main.5ec541bd.js",
+    "static/media/KirangHaerang-Regular.ttf": "/static/media/KirangHaerang-Regular.7dd9ceb7425c0440ec02.ttf",
     "index.html": "/index.html",
-    "main.f855e6bc.css.map": "/static/css/main.f855e6bc.css.map",
-    "main.3860d69c.js.map": "/static/js/main.3860d69c.js.map"
+    "main.2579aade.css.map": "/static/css/main.2579aade.css.map",
+    "main.5ec541bd.js.map": "/static/js/main.5ec541bd.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.3860d69c.js"
+    "static/css/main.2579aade.css",
+    "static/js/main.5ec541bd.js"
   ]
 }
