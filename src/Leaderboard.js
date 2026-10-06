@@ -3,7 +3,6 @@
 import './Leaderboard.css';
 import React, { useState } from 'react';
 
-// Replace with your actual deployed Worker URL
 const WORKER_URL = 'https://sf-scav-hunt-leaderboard-proxy.vananish.workers.dev';
 
 export default function Leaderboard(): React.MixedElement {
