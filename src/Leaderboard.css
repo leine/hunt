@@ -1,0 +1,66 @@
+.leaderboard-gate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+.leaderboard-gate form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.leaderboard-password-input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.leaderboard-submit {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.leaderboard-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.leaderboard-error {
+  color: #c0392b;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.leaderboard-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #eee;
+}
+
+.leaderboard-table th {
+  font-weight: 600;
+}
