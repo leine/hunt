@@ -4,4 +4,8 @@ compatibility_date = "2026-10-06"
 
 [vars]
 ALLOWED_ORIGIN = "https://sanfranciscohunt.com,http://localhost:3000"
-SHEET_RANGE = "Sheet1!A1:Z1000"   # ← change "Sheet1" to actual tab name
+SHEET_RANGE = "leaderboard_external!A1:Z1000"
+
+[observability.logs]
+enabled = true
+invocation_logs = true
