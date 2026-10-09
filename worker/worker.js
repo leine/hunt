@@ -72,13 +72,15 @@ export default {
 
       if (!sheetRes.ok) {
         const errText = await sheetRes.text();
+        // Full detail goes to Observability logs; client gets a terse response.
+        console.error("Sheets API error", {
+          status: sheetRes.status,
+          statusText: sheetRes.statusText,
+          requestedUrl: sheetUrl,
+          body: errText,
+        });
         return json(
-          {
-            error: "Failed to fetch sheet",
-            status: sheetRes.status,
-            requestedUrl: sheetUrl,
-            detail: errText.slice(0, 500), // truncate in case it's a big HTML page
-          },
+          { error: "Failed to fetch sheet", status: sheetRes.status },
           502,
           corsHeaders
         );
@@ -88,7 +90,11 @@ export default {
       // sheetData.values is an array of rows (each row an array of cell strings)
       return json({ values: sheetData.values || [] }, 200, corsHeaders);
     } catch (err) {
-      return json({ error: "Server error", detail: String(err) }, 500, corsHeaders);
+      console.error("Worker error", {
+        message: err?.message,
+        stack: err?.stack,
+      });
+      return json({ error: "Server error" }, 500, corsHeaders);
     }
   },
 };
@@ -147,7 +153,12 @@ async function getGoogleAccessToken(env) {
   });
 
   if (!tokenRes.ok) {
-    throw new Error(`Google token exchange failed: ${await tokenRes.text()}`);
+    const errText = await tokenRes.text();
+    console.error("Google token exchange failed", {
+      status: tokenRes.status,
+      body: errText,
+    });
+    throw new Error("Google token exchange failed");
   }
 
   const tokenData = await tokenRes.json();
